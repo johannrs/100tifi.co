@@ -21,6 +21,12 @@ const router = async () => {
 
     header.innerHTML = await Header();
     
+    // lo que vamos a hacer es obtener el ID y mandarselo a resolveroutes para que me diga a quien se lo debo mandar
+    let hash = getHash();
+    let route = await resolveRoutes(hash)
+    // ahora vamos a comparar el valor de la ruta obtenida con los valores de las rutas que ya tenemos en la constante routes arriba
+    let render = routes[route] ? routes[route] : Error404;
+    content.innerHTML = await render ();
 }
 
 export default router;
