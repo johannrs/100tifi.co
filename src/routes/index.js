@@ -1,7 +1,7 @@
 import Header from '../templates/Header';
 import Home from '../pages/home';
 import Characters from '../pages/Character';
-import Error404 from '../pages/Error404';
+import error404 from '../pages/error404';
 import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
 
@@ -25,7 +25,7 @@ const router = async () => {
     let hash = getHash();
     let route = await resolveRoutes(hash)
     // ahora vamos a comparar el valor de la ruta obtenida con los valores de las rutas que ya tenemos en la constante routes arriba
-    let render = routes[route] ? routes[route] : Error404;
+    let render = routes[route] ? routes[route] : error404;
     content.innerHTML = await render ();
 }
 
