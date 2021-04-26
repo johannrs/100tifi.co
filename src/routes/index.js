@@ -1,5 +1,5 @@
 import Header from '../templates/Header';
-import Home from '../pages/home';
+import Home from '../pages/Home';
 import Characters from '../pages/Character';
 import error404 from '../pages/error404';
 import getHash from '../utils/getHash';
